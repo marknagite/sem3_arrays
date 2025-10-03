@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cmath>
+#include <vector>
+using namespace std;
+int main() {
+	int a;
+	int summa = 0;
+	cout << "enter size of array: ";
+
+	cin >> a;
+	int* array = new int[a];
+	for (int i = 0; i < a; i++) {
+		cout << "enter elements of array: ";
+		cin >> array[i];
+	}
+	for (int i = 0; i < a; i++) {
+		if (array[i] > pow(2, (i + 1))) {
+			summa++;
+		}
+	}
+	cout << "number of elements is: " << summa;
+	delete[] array;
+	return 0;
+}
