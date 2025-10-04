@@ -1,0 +1,39 @@
+#include <iostream>      
+#include <vector>
+using namespace std;
+int main() {
+	setlocale(LC_ALL, "RU");
+	int a = 15;
+	float* array = new float[a];
+	float min = 999999;
+	float max = 0;
+	float mn, mx;
+	for (int i = 0; i < a; i++) {
+		cout << "Введите элементы массива: ";
+		cin >> array[i];
+	}
+	for (int i = 0; i < a; i++) {
+		if (min > array[i]) {
+			min = array[i];
+			mn = i;
+		}
+	}
+	for (int i = 0; i < a; i++) {
+		if (max < array[i]) {
+			max = array[i];
+			mx = i;
+		}
+	}
+
+	if (mn == 1 && mx == 0) {
+		for (int i = 0; i < a; i++) {
+			array[i] = (array[i]) / 2;
+		}
+	}
+
+	for (int i = 0; i < a; i++) {
+		cout << array[i] << " ";
+	}
+
+	return 0;
+}
