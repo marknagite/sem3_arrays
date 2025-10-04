@@ -1,0 +1,45 @@
+#include <iostream>      
+#include <vector>
+using namespace std;
+int main() {
+	setlocale(LC_ALL, "RU");
+	int a = 15;
+	float mn;
+	float mx;
+	float* array = new float[a];
+	float min = 999999;
+	float max = 0;
+
+	for (int i = 0; i < a; i++) {
+		cout << "Введите элемент массива: ";
+		cin >> array[i];
+	}
+
+	for (int i = 0; i < a; i++) {
+		if (max < array[i]) {
+			max = array[i];
+			mx = i;
+		}
+	}
+
+	for (int i = 0; i < a; i++) {
+		if (min > array[i]) {
+			min = array[i];
+			mn = i;
+		}
+	}
+
+
+	if (mx < mn) {
+		cout << "Произведение минимального и максимального: " << min*max;
+	}
+	else
+	{
+		cout << "Максимальное не предшествует минимальному";
+	}
+	
+
+
+
+	return 0;
+ }
