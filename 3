@@ -1,0 +1,63 @@
+#include <iostream>     //Задача 3
+#include<vector>
+
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "RU");
+
+    float a = 15;
+    int mn = 0;
+    int mx = 0;
+    float* array = new float[a];
+
+    for (int i = 0; i < a; i++) {
+        cout << "Введите элементы массива: ";
+        cin >> array[i];
+    }
+    
+    cout << "Массив до сортировки: ";
+    for (int i = 0; i < a; i++) {
+        cout << array[i] << " ";
+    }
+
+    float max = 0;
+    float min = 9999999;
+
+    for (int i = 0; i < a; i++) {
+        if (min > array[i]) {
+            min = array[i];
+            mn = i;
+        }
+    }
+
+
+    int k = min;
+    array[mn] = array[0];
+    array[0] = k;
+
+   
+
+    for (int i = 0; i < a; i++) {
+        if (max < array[i]) {
+            max = array[i];
+            mx = i;
+        }
+    }
+    
+    int s = max;
+    array[mx] = array[4];
+    array[4] = s;
+   
+
+
+    cout << endl;
+    cout << "Массив после сортировки: ";
+    for (int i = 0; i < a; i++) {
+        cout << array[i] << " ";
+    }
+
+    delete[] array;
+
+    return 0;
+}
